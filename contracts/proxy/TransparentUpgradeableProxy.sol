@@ -50,7 +50,7 @@ contract TransparentUpgradeableProxy is UpgradeableProxy {
     /**
      * @dev Modifier used internally that will delegate the call to the implementation unless the sender is the admin.
      */
-    modifier ifAdmin() {
+    modifier ifAdmin() virtual {
         if (msg.sender == _admin()) {
             _;
         } else {
